@@ -2,7 +2,7 @@ import React from 'react';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Zanna Frost Admin | Dashboard',
+  title: 'Frost Admin | Dashboard',
   description: 'Manage your profile and track analytics',
   robots: 'noindex, nofollow',
 };

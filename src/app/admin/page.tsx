@@ -87,7 +87,7 @@ export default function AdminPage() {
           <div className="w-8 h-8 bg-pink-500/20 rounded-lg flex items-center justify-center">
             <ShieldCheck className="text-pink-400" size={18} />
           </div>
-          <span className="font-bold tracking-tight">Zanna Frost Admin</span>
+          <span className="font-bold tracking-tight">Frost Admin</span>
         </div>
 
         <nav className="flex flex-col gap-2">

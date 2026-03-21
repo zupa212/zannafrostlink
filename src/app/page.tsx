@@ -117,7 +117,7 @@ export default function Home() {
             <div className="relative w-full h-full rounded-full overflow-hidden border border-white/5 bg-neutral-800">
               <Image 
                 src="/zanna_1.jpg" 
-                alt="Zanna Frost" 
+                alt="Frost" 
                 fill 
                 className="object-cover"
                 priority
@@ -131,7 +131,7 @@ export default function Home() {
         {/* Name & Identity */}
         <div className="text-center space-y-3 mb-12 w-full">
           <div className="flex items-center justify-center gap-2">
-            <h1 className="text-4xl md:text-5xl font-light tracking-tight">Zanna Frost</h1>
+            <h1 className="text-4xl md:text-5xl font-light tracking-tight">Frost</h1>
             <div className="bg-[#007aff] rounded-full p-0.5 shadow-[0_0_10px_rgba(0,122,255,0.4)]">
               <CheckCircle2 size={16} className="text-white fill-current" />
             </div>
@@ -146,11 +146,11 @@ export default function Home() {
           {[
             { 
               Icon: Instagram, 
-              href: "https://www.instagram.com/zannafrost/" 
+              href: "https://www.instagram.com/frost/" 
             },
             { 
               Icon: Facebook, 
-              href: "https://www.facebook.com/zannafrost" 
+              href: "https://www.facebook.com/frost" 
             },
             { 
               Icon: (props: any) => (
@@ -158,7 +158,7 @@ export default function Home() {
                   <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5" />
                 </svg>
               ), 
-              href: "https://www.tiktok.com/@zannafrost?lang=el-GR" 
+              href: "https://www.tiktok.com/@frost?lang=el-GR" 
             }
           ].map(({ Icon, href }, idx) => (
             <motion.a
@@ -245,7 +245,7 @@ export default function Home() {
             <span className="hidden sm:inline text-white/20">•</span>
             <a href="#" className="hover:text-white transition-colors duration-300 tracking-widest">Privacy Policy</a>
           </div>
-          <p className="opacity-50 font-extralight tracking-[0.4em]">© 2026 ZANNA FROST. <br className="sm:hidden" />ALL RIGHTS RESERVED.</p>
+          <p className="opacity-50 font-extralight tracking-[0.4em]">© 2026 FROST. <br className="sm:hidden" />ALL RIGHTS RESERVED.</p>
         </footer>
 
       </div>

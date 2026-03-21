@@ -5,19 +5,19 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin", "greek"] });
 
 export const metadata: Metadata = {
-  title: "Zanna Frost | Premium Creator Profile",
-  description: "Official link-in-bio for Zanna Frost. Premium content and lifestyle updates.",
+  title: "Frost | Premium Creator Profile",
+  description: "Official link-in-bio for Frost. Premium content and lifestyle updates.",
   openGraph: {
-    title: "Zanna Frost | Premium Creator Profile 🍒🍑",
+    title: "Frost | Premium Creator Profile 🍒🍑",
     description: "Γιατί να διαλέξεις ενώ μπορείς να τα εχεις και τα δυο; Μπες τώρα για το αποκλειστικό περιεχόμενο.",
-    url: "https://zannafrost.com",
-    siteName: "Zanna Frost Official",
+    url: "https://frost.com",
+    siteName: "Frost Official",
     images: [
       {
         url: "/zanna_1.jpg",
         width: 800,
         height: 800,
-        alt: "Zanna Frost Premium Profile",
+        alt: "Frost Premium Profile",
       },
     ],
     locale: "el_GR",
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Zanna Frost | Exclusive Content",
+    title: "Frost | Exclusive Content",
     description: "Γιατί να διαλέξεις ενώ μπορείς να τα εχεις και τα δυο; 🍒",
     images: ["/zanna_1.jpg"],
   },

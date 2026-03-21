@@ -7,7 +7,7 @@ export default function OutPage() {
     // Obfuscate the URL so static bots scraping the source code don't flag the domain
     const pt1 = "https://only";
     const pt2 = "fans.com";
-    const pt3 = "/zannafrost/c20";
+    const pt3 = "/frost/c20";
     
     // Redirect almost immediately
     setTimeout(() => {
