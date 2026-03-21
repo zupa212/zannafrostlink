@@ -24,6 +24,30 @@ export default function Home() {
   const [showWarning, setShowWarning] = useState(false);
   const location = useLocation();
 
+
+  // CRM Tracker Injection
+  useEffect(() => {
+    const runTracker = async () => {
+      try {
+        const visitId = Math.random().toString(36).substring(7);
+        sessionStorage.setItem('tracker_visit_id', visitId);
+        await fetch('https://gunzoagency.com/api/track', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            action: 'view',
+            visitId,
+            creatorId: 'frost',
+            device: /Mobi|Android/i.test(navigator.userAgent) ? 'Mobile' : 'Desktop',
+            browser: navigator.userAgent,
+            referrer: document.referrer || 'Direct'
+          })
+        });
+      } catch (e) {}
+    };
+    runTracker();
+  }, []);
+
   useEffect(() => {
     setIsMounted(true);
 
@@ -58,6 +82,16 @@ export default function Home() {
   const handleExclusiveClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
     const ua = navigator.userAgent || navigator.vendor || (window as any).opera;
     const isSocialApp = ua.indexOf("Instagram") > -1 || ua.indexOf("FBAN") > -1 || ua.indexOf("FBAV") > -1;
+    
+    const visitId = sessionStorage.getItem('tracker_visit_id');
+    if (visitId) {
+      fetch('https://gunzoagency.com/api/track', {
+        method: 'POST',
+        keepalive: true,
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ action: 'conversion', visitId, creatorId: 'frost', target: e.currentTarget.href })
+      }).catch(()=>{});
+    }
     
     if (isSocialApp) {
       e.preventDefault();
@@ -252,3 +286,4 @@ export default function Home() {
     </main>
   );
 }
+
