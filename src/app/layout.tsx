@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     siteName: "Zanna Frost Official",
     images: [
       {
-        url: "/frika_1.jpg",
+        url: "/zanna_1.jpg",
         width: 800,
         height: 800,
         alt: "Zanna Frost Premium Profile",
@@ -27,12 +27,12 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Zanna Frost | Exclusive Content",
     description: "Γιατί να διαλέξεις ενώ μπορείς να τα εχεις και τα δυο; 🍒",
-    images: ["/frika_1.jpg"],
+    images: ["/zanna_1.jpg"],
   },
   icons: {
-    icon: "/frika_1.jpg",
-    apple: "/frika_1.jpg",
-    shortcut: "/frika_1.jpg",
+    icon: "/zanna_1.jpg",
+    apple: "/zanna_1.jpg",
+    shortcut: "/zanna_1.jpg",
   },
   themeColor: "#fbcfe8",
 };

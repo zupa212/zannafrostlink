@@ -70,9 +70,20 @@ export default function Home() {
   }
 
   return (
-    <main className="relative min-h-screen text-white overflow-x-hidden select-none selection:bg-pink-300 selection:text-black font-sans bg-gradient-to-b from-black via-black to-purple-900/60">
-      {/* Dynamic Backgound Elements - no video anymore */}
-      <div className="fixed inset-0 z-0 pointer-events-none bg-[radial-gradient(ellipse_at_bottom,_var(--tw-gradient-stops))] from-purple-900/40 via-black to-black opacity-80" />
+    <main className="relative min-h-screen text-white overflow-x-hidden select-none selection:bg-pink-300 selection:text-black font-sans bg-black">
+      {/* Background Video Layer */}
+      <div className="fixed inset-[-100px] z-0 pointer-events-none">
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover"
+        >
+          <source src="/zanna_bg.mov" type="video/mp4" />
+        </video>
+        <div className="absolute inset-0 bg-black/30" />
+      </div>
 
 
       {/* Content Warning Overlay */}
@@ -105,7 +116,7 @@ export default function Home() {
           >
             <div className="relative w-full h-full rounded-full overflow-hidden border border-white/5 bg-neutral-800">
               <Image 
-                src="/frika_1.jpg" 
+                src="/zanna_1.jpg" 
                 alt="Zanna Frost" 
                 fill 
                 className="object-cover"
@@ -200,7 +211,7 @@ export default function Home() {
           className="w-full block relative aspect-[21/9] bg-black rounded-[32px] overflow-hidden border-[1px] border-white/15 shadow-[0_8px_40px_rgba(0,0,0,0.6)] mb-12 cursor-pointer group"
         >
           <Image 
-            src="/frika_2.jpg" 
+            src="/zanna_2.jpg" 
             alt="Your Gift" 
             fill 
             className="object-cover opacity-50 group-hover:opacity-70 group-hover:scale-110 transition-all duration-700 blur-[2px]" 
