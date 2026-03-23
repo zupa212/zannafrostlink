@@ -29,11 +29,6 @@ export const metadata: Metadata = {
     description: "Γιατί να διαλέξεις ενώ μπορείς να τα εχεις και τα δυο; 🍒",
     images: ["/zanna_1.jpg"],
   },
-  icons: {
-    icon: "/zanna_1.jpg",
-    apple: "/zanna_1.jpg",
-    shortcut: "/zanna_1.jpg",
-  },
   themeColor: "#fbcfe8",
 };
 
