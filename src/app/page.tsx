@@ -111,7 +111,7 @@ export default function Home() {
           <a href="/out" onClick={handleExclusiveClick} className="mb-3 group">
             <div className="w-10 h-10 rounded-full border-2 border-[#00b4d8]/60 flex items-center justify-center group-hover:border-[#00b4d8] transition-colors group-hover:shadow-[0_0_15px_rgba(0,180,216,0.4)]"><Lock size={16} className="text-[#00b4d8]" /></div>
           </a>
-          <p className="text-white/70 text-base font-medium mb-8">Γιατί να διαλέξεις ενώ μπορείς να τα εχεις και τα δυο; 🍒🍑</p>
+          <p className="text-white/70 text-base font-medium mb-8">Αφου βαρεθηκες την φασολαδα... ελα να δοκιμασεις το λουκανικο..😜</p>
         </motion.div>
         <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.5, duration: 0.6 }} className="relative w-full max-w-lg px-4 mb-16">
           <div onClick={handleVideoTap} className="relative w-full rounded-3xl overflow-hidden cursor-pointer group border border-white/10 shadow-2xl shadow-black/50" style={{ aspectRatio: '16/10' }}>
