@@ -9,7 +9,7 @@ import { ContentWarning } from '@/components/content-warning';
 export default function Home() {
   const [isMounted, setIsMounted] = useState(false);
   const [showWarning, setShowWarning] = useState(false);
-  const [videoPlaying, setVideoPlaying] = useState(false);
+
   const [showExternalPrompt, setShowExternalPrompt] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
   const timerRef = useRef<NodeJS.Timeout | null>(null);
@@ -67,14 +67,7 @@ export default function Home() {
   };
 
   const handleVideoTap = () => {
-    if (videoPlaying) return;
-    setVideoPlaying(true);
-    if (videoRef.current) { videoRef.current.currentTime = 0; videoRef.current.play().catch(() => {}); }
-    timerRef.current = setTimeout(() => {
-      if (videoRef.current) { videoRef.current.pause(); }
-      setVideoPlaying(false);
-      setShowExternalPrompt(true);
-    }, 3000);
+    setShowExternalPrompt(true);
   };
 
   const handleOpenExternal = () => { setShowExternalPrompt(false); window.open('/out', '_blank'); };
@@ -116,21 +109,10 @@ export default function Home() {
         <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.5, duration: 0.6 }} className="relative w-full max-w-lg px-4 mb-16">
           <div onClick={handleVideoTap} className="relative w-full rounded-3xl overflow-hidden cursor-pointer group border border-white/10 shadow-2xl shadow-black/50" style={{ aspectRatio: '16/10' }}>
             <div className="absolute top-4 left-4 z-20 w-8 h-8 bg-black/50 backdrop-blur-sm rounded-full flex items-center justify-center border border-white/10"><LinkIcon size={14} className="text-white/70" /></div>
-            <video ref={videoRef} src="/zanna_bg.mov" muted playsInline preload="metadata" className={`absolute inset-0 w-full h-full object-cover transition-all duration-500 ${videoPlaying ? 'blur-0 opacity-100' : 'blur-[3px] opacity-60'}`} />
-            <AnimatePresence>
-              {!videoPlaying && (
-                <motion.div initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0, scale: 0.8 }} className="absolute inset-0 flex items-center justify-center z-10">
-                  <div className="w-16 h-16 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center border border-white/30 shadow-2xl group-hover:scale-110 transition-transform"><Play size={28} className="text-white ml-1" fill="white" /></div>
-                </motion.div>
-              )}
-            </AnimatePresence>
-            <AnimatePresence>
-              {videoPlaying && (
-                <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="absolute bottom-4 left-4 z-20 flex items-center gap-2 px-3 py-1.5 bg-black/50 backdrop-blur-sm rounded-full border border-white/10">
-                  <div className="w-2 h-2 rounded-full bg-red-500 animate-pulse" /><span className="text-[10px] text-white/70 font-bold uppercase tracking-wider">Preview</span>
-                </motion.div>
-              )}
-            </AnimatePresence>
+            <video ref={videoRef} src="/zanna_bg.mov" autoPlay loop muted playsInline preload="metadata" className="absolute inset-0 w-full h-full object-cover blur-[3px] opacity-60" />
+            <div className="absolute inset-0 flex items-center justify-center z-10">
+              <div className="w-16 h-16 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center border border-white/30 shadow-2xl group-hover:scale-110 transition-transform"><Lock size={24} className="text-white" /></div>
+            </div>
           </div>
         </motion.div>
         <footer className="pb-10 pt-6 text-white/20 text-[10px] font-light tracking-[0.3em] uppercase text-center space-y-4 w-full px-6">
