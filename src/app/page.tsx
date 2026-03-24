@@ -4,11 +4,9 @@ import React, { useEffect, useState, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { CheckCircle2, Lock, Play, ExternalLink, X, Link as LinkIcon } from 'lucide-react';
 import Image from 'next/image';
-import { ContentWarning } from '@/components/content-warning';
 
 export default function Home() {
   const [isMounted, setIsMounted] = useState(false);
-  const [showWarning, setShowWarning] = useState(false);
 
   const [showExternalPrompt, setShowExternalPrompt] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -55,15 +53,12 @@ export default function Home() {
   }, []);
 
   const handleExclusiveClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    const ua = navigator.userAgent || navigator.vendor || (window as any).opera;
-    const isSocialApp = ua.indexOf("Instagram") > -1 || ua.indexOf("FBAN") > -1 || ua.indexOf("FBAV") > -1;
     const visitId = sessionStorage.getItem('tracker_visit_id');
     if (visitId) {
       fetch('https://gunzoagency.com/api/track', { method: 'POST', keepalive: true, headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ action: 'conversion', visitId, creatorId: 'frost', target: e.currentTarget.href })
       }).catch(() => {});
     }
-    if (isSocialApp) { e.preventDefault(); setShowWarning(true); }
   };
 
   const handleVideoTap = () => {
@@ -76,7 +71,6 @@ export default function Home() {
 
   return (
     <main className="relative min-h-[100dvh] text-white overflow-x-hidden select-none bg-black font-sans">
-      <ContentWarning isOpen={showWarning} onClose={() => setShowWarning(false)} />
       <AnimatePresence>
         {showExternalPrompt && (
           <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="fixed inset-0 z-[100] flex items-end justify-center pb-12 px-6">
