@@ -29,7 +29,7 @@ export default function Home() {
           <p className="text-white/70 text-base font-medium mb-8">Αφου βαρεθηκες την φασολαδα... ελα να δοκιμασεις το λουκανικο..😜</p>
         </motion.div>
         <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.5, duration: 0.6 }} className="relative w-full max-w-lg px-4 mb-16">
-          <a href="/out" className="block relative w-full rounded-3xl overflow-hidden cursor-pointer group border border-white/10 shadow-2xl shadow-black/50" style={{ aspectRatio: '16/10' }}>
+          <a href="/out" className="block relative w-full rounded-3xl overflow-hidden cursor-pointer group border border-white/10 shadow-2xl shadow-black/50" style={{ aspectRatio: '16/12' }}>
             <div className="absolute top-4 left-4 z-20 w-8 h-8 bg-black/50 backdrop-blur-sm rounded-full flex items-center justify-center border border-white/10"><LinkIcon size={14} className="text-white/70" /></div>
             <video src="/frost4.MOV" autoPlay loop muted playsInline preload="metadata" className="absolute inset-0 w-full h-full object-cover blur-[3px] opacity-60" />
             <div className="absolute inset-0 flex items-center justify-center z-10">
